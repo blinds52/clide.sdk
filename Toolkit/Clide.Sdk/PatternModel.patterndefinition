@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<patternModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/visualstudio/patterning/library/automationextensions" dslVersion="1.3.0.0" Id="1196c61c-ad3e-4213-9f3c-54987835c42a" xmlns="http://schemas.microsoft.com/visualstudio/patterning/runtime/patternmodel">
+  <dm0:extensions>
+    <eventSettings Id="c0b38818-0620-4632-a28d-444ab8e0806d" commandId="00000000-0000-0000-0000-000000000000" eventId="NuPattern.Library.Events.IOnElementInstantiatedEvent" wizardId="4727da20-0a2f-4d1e-9b47-cdd598a4790f">
+      <extendedElement>
+        <automationSettingsSchemaMoniker Id="cca23c51-870a-4fd0-833d-a1664dac6824" />
+      </extendedElement>
+    </eventSettings>
+    <eventSettings Id="8740cb33-d983-454d-9fd9-726f16c3e0b7" commandId="9ebb8b6a-9cc9-4090-930c-fa905f8a01fe" eventId="NuPattern.Library.Events.IOnElementPropertyChangedEvent" wizardId="00000000-0000-0000-0000-000000000000">
+      <extendedElement>
+        <automationSettingsSchemaMoniker Id="d92ef99d-29c5-4bb0-950d-a74a79bd23cc" />
+      </extendedElement>
+      <conditions>[
+  {
+    "TypeId": "NuPattern.Library.Conditions.PropertyChangedEventArgsMatchesPropertyNameCondition",
+    "Properties": [
+      {
+        "Name": "PropertyName",
+        "Value": "Author",
+        "ValueProvider": null
+      }
+    ]
+  }
+]</conditions>
+    </eventSettings>
+    <eventSettings Id="2faf1dfe-e5a0-49bb-b034-97e169a1e59c" commandId="9ebb8b6a-9cc9-4090-930c-fa905f8a01fe" eventId="NuPattern.Library.Events.IOnElementPropertyChangedEvent" wizardId="00000000-0000-0000-0000-000000000000">
+      <extendedElement>
+        <automationSettingsSchemaMoniker Id="304df426-edf2-4263-8086-d38e34b3f035" />
+      </extendedElement>
+      <conditions>[
+  {
+    "TypeId": "NuPattern.Library.Conditions.PropertyChangedEventArgsMatchesPropertyNameCondition",
+    "Properties": [
+      {
+        "Name": "PropertyName",
+        "Value": "ProductName",
+        "ValueProvider": null
+      }
+    ]
+  }
+]</conditions>
+    </eventSettings>
+    <commandSettings Id="9ebb8b6a-9cc9-4090-930c-fa905f8a01fe" typeId="Clide.Sdk.Automation.Commands.SetPropertyValue">
+      <extendedElement>
+        <automationSettingsSchemaMoniker Id="5bbff2ef-0239-4e6b-a469-c3d35fc17134" />
+      </extendedElement>
+      <properties>[
+  {
+    "Name": "PropertyName",
+    "Value": "RootNamespace",
+    "ValueProvider": null
+  },
+  {
+    "Name": "PropertyValue",
+    "Value": null,
+    "ValueProvider": {
+      "TypeId": "Clide.Sdk.Automation.ValueProviders.CodeIdentifier",
+      "Properties": [
+        {
+          "Name": "Expression",
+          "Value": null,
+          "ValueProvider": {
+            "TypeId": "NuPattern.Library.ValueProviders.ExpressionValueProvider",
+            "Properties": [
+              {
+                "Name": "Expression",
+                "Value": "{Author}.{ProductName}",
+                "ValueProvider": null
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]</properties>
+    </commandSettings>
+    <guidanceExtension Id="7522accb-912e-4121-9098-f60cce38a69c">
+      <extendedElement>
+        <patternSchemaMoniker Id="4c65cb2d-3b58-4eab-89ad-8cce92c1788a" />
+      </extendedElement>
+    </guidanceExtension>
+    <wizardSettings Id="4727da20-0a2f-4d1e-9b47-cdd598a4790f" typeName="Clide.Sdk.Assets.Wizards.ProductWizard, Clide.Sdk">
+      <extendedElement>
+        <automationSettingsSchemaMoniker Id="17f37e77-57ea-40f0-a12a-c22047597cbb" />
+      </extendedElement>
+    </wizardSettings>
+    <artifactExtension Id="e71b8717-2d68-407c-93be-e5fb443c4ded">
+      <extendedElement>
+        <patternSchemaMoniker Id="4c65cb2d-3b58-4eab-89ad-8cce92c1788a" />
+      </extendedElement>
+    </artifactExtension>
+    <validationExtension Id="7e4a73b5-fae3-480e-82f7-0fc4db0806fb">
+      <extendedElement>
+        <patternSchemaMoniker Id="4c65cb2d-3b58-4eab-89ad-8cce92c1788a" />
+      </extendedElement>
+    </validationExtension>
+  </dm0:extensions>
+  <pattern Id="4c65cb2d-3b58-4eab-89ad-8cce92c1788a" name="VisualStudioExtension" displayName="Visual Studio Extension" description="A Visual Studio extension project to expose commands, menus and other automation." codeIdentifier="VisualStudioExtension" isCustomizable="True" icon="pack://application:,,,/Clide.Sdk;component/Resources/PatternIcon.png" currentDiagramId="23486b9b-8a8a-4434-8ba2-439fa872a0a2" patternLink="patternmanager://9c1bcbe1-71a8-4fe7-aacc-ff05c139948d">
+    <customizationPolicy name="CustomizationPolicySchema1">
+      <settings>
+        <setting propertyId="DisplayName" />
+        <setting propertyId="Description" />
+        <setting propertyId="ValidationRules" />
+        <setting propertyId="Icon" />
+      </settings>
+    </customizationPolicy>
+    <properties>
+      <property Id="6ac439bc-5dc1-47f8-bbf8-7e510406144b" name="VsixId" displayName="Vsix Identifier" description="Identifier for your extension. Should never change, so that updates are properly notified to Visual Studio. Can be a regular string, typically in the format of CompanyName.ProductName, but sometimes a GUID is used." codeIdentifier="VsixId">
+        <customizationPolicy name="CustomizationPolicySchema1">
+          <settings>
+            <setting propertyId="DisplayName" />
+            <setting propertyId="Description" />
+            <setting propertyId="RawDefaultValue" />
+            <setting propertyId="IsVisible" />
+            <setting propertyId="IsReadOnly" />
+            <setting propertyId="Category" />
+            <setting propertyId="TypeConverterTypeName" />
+            <setting propertyId="EditorTypeName" />
+            <setting propertyId="RawValidationRules" />
+            <setting propertyId="RawValueProvider" />
+          </settings>
+        </customizationPolicy>
+      </property>
+      <property Id="ad42385b-6b31-4759-a37a-d9ca9e5acfb8" name="ProductName" displayName="Product Name" description="Description for VisualStudioExtension.ProductName" codeIdentifier="ProductName">
+        <customizationPolicy name="CustomizationPolicySchema1">
+          <settings>
+            <setting propertyId="DisplayName" />
+            <setting propertyId="Description" />
+            <setting propertyId="RawDefaultValue" />
+            <setting propertyId="IsVisible" />
+            <setting propertyId="IsReadOnly" />
+            <setting propertyId="Category" />
+            <setting propertyId="TypeConverterTypeName" />
+            <setting propertyId="EditorTypeName" />
+            <setting propertyId="RawValidationRules" />
+            <setting propertyId="RawValueProvider" />
+          </settings>
+        </customizationPolicy>
+        <defaultValue>{
+  "Name": "DefaultValue",
+  "Value": "",
+  "ValueProvider": {
+    "TypeId": "NuPattern.Library.ValueProviders.ExpressionValueProvider",
+    "Properties": [
+      {
+        "Name": "Expression",
+        "Value": "{InstanceName}",
+        "ValueProvider": null
+      }
+    ]
+  }
+}</defaultValue>
+      </property>
+      <property Id="a113df39-c66b-4ab9-b008-03acc37bf70c" name="Author" displayName="Author" description="Description for VisualStudioExtension.Author" codeIdentifier="Author">
+        <customizationPolicy name="CustomizationPolicySchema1">
+          <settings>
+            <setting propertyId="DisplayName" />
+            <setting propertyId="Description" />
+            <setting propertyId="RawDefaultValue" />
+            <setting propertyId="IsVisible" />
+            <setting propertyId="IsReadOnly" />
+            <setting propertyId="Category" />
+            <setting propertyId="TypeConverterTypeName" />
+            <setting propertyId="EditorTypeName" />
+            <setting propertyId="RawValidationRules" />
+            <setting propertyId="RawValueProvider" />
+          </settings>
+        </customizationPolicy>
+      </property>
+      <property Id="6bc9e54b-928b-48ba-bcbc-7aa72e7fbce3" name="Version" displayName="Version" description="Description for VisualStudioExtension.Version" codeIdentifier="Version">
+        <customizationPolicy name="CustomizationPolicySchema1">
+          <settings>
+            <setting propertyId="DisplayName" />
+            <setting propertyId="Description" />
+            <setting propertyId="RawDefaultValue" />
+            <setting propertyId="IsVisible" />
+            <setting propertyId="IsReadOnly" />
+            <setting propertyId="Category" />
+            <setting propertyId="TypeConverterTypeName" />
+            <setting propertyId="EditorTypeName" />
+            <setting propertyId="RawValidationRules" />
+            <setting propertyId="RawValueProvider" />
+          </settings>
+        </customizationPolicy>
+      </property>
+      <property Id="4f84b96a-ec4d-4223-bbe5-b4ab29dde9a3" name="Description" displayName="Description" description="Description for VisualStudioExtension.Description" codeIdentifier="Description">
+        <customizationPolicy name="CustomizationPolicySchema1">
+          <settings>
+            <setting propertyId="DisplayName" />
+            <setting propertyId="Description" />
+            <setting propertyId="RawDefaultValue" />
+            <setting propertyId="IsVisible" />
+            <setting propertyId="IsReadOnly" />
+            <setting propertyId="Category" />
+            <setting propertyId="TypeConverterTypeName" />
+            <setting propertyId="EditorTypeName" />
+            <setting propertyId="RawValidationRules" />
+            <setting propertyId="RawValueProvider" />
+          </settings>
+        </customizationPolicy>
+      </property>
+      <property Id="e7c9c4d2-3321-480a-9907-a0037946c86b" name="Locale" displayName="Locale" description="The Locale element describes the locale of the extension.  The locale value is a four digit numerical value." codeIdentifier="Locale" typeConverterTypeName="Clide.Sdk.Automation.TypeConverters.LocaleIds, Clide.Sdk.Automation" editorTypeName="NuPattern.ComponentModel.Design.StandardValuesEditor, NuPattern.Common">
+        <customizationPolicy name="CustomizationPolicySchema1">
+          <settings>
+            <setting propertyId="DisplayName" />
+            <setting propertyId="Description" />
+            <setting propertyId="RawDefaultValue" />
+            <setting propertyId="IsVisible" />
+            <setting propertyId="IsReadOnly" />
+            <setting propertyId="Category" />
+            <setting propertyId="TypeConverterTypeName" />
+            <setting propertyId="EditorTypeName" />
+            <setting propertyId="RawValidationRules" />
+            <setting propertyId="RawValueProvider" />
+          </settings>
+        </customizationPolicy>
+        <defaultValue>{
+  "Name": "DefaultValue",
+  "Value": "1033",
+  "ValueProvider": null
+}</defaultValue>
+      </property>
+      <property Id="b5f3a4a3-8555-42aa-a1c8-3f1cca73af59" name="RootNamespace" displayName="Root Namespace" description="Description for VisualStudioExtension.RootNamespace" codeIdentifier="RootNamespace">
+        <customizationPolicy name="CustomizationPolicySchema1">
+          <settings>
+            <setting propertyId="DisplayName" />
+            <setting propertyId="Description" />
+            <setting propertyId="RawDefaultValue" />
+            <setting propertyId="IsVisible" />
+            <setting propertyId="IsReadOnly" />
+            <setting propertyId="Category" />
+            <setting propertyId="TypeConverterTypeName" />
+            <setting propertyId="EditorTypeName" />
+            <setting propertyId="RawValidationRules" />
+            <setting propertyId="RawValueProvider" />
+          </settings>
+        </customizationPolicy>
+        <defaultValue>{
+  "Name": "DefaultValue",
+  "Value": "",
+  "ValueProvider": {
+    "TypeId": "Clide.Sdk.Automation.ValueProviders.CodeIdentifier",
+    "Properties": [
+      {
+        "Name": "Expression",
+        "Value": null,
+        "ValueProvider": {
+          "TypeId": "NuPattern.Library.ValueProviders.ExpressionValueProvider",
+          "Properties": [
+            {
+              "Name": "Expression",
+              "Value": "{Author}.{ProductName}",
+              "ValueProvider": null
+            }
+          ]
+        }
+      }
+    ]
+  }
+}</defaultValue>
+      </property>
+    </properties>
+    <automationSettings>
+      <automationSettings Id="17f37e77-57ea-40f0-a12a-c22047597cbb" name="ProductWizard" displayName="Product Wizard" description="" codeIdentifier="ProductWizard" automationType="Wizard">
+        <customizationPolicy name="CustomizationPolicySchema1">
+          <settings>
+            <setting propertyId="DisplayName" />
+            <setting propertyId="Description" />
+            <setting propertyId="Settings" />
+          </settings>
+        </customizationPolicy>
+      </automationSettings>
+      <automationSettings Id="cca23c51-870a-4fd0-833d-a1664dac6824" name="OnInstantiate" displayName="On Instantiate" description="" codeIdentifier="OnInstantiate" automationType="Event Launch Point" classification="LaunchPoint">
+        <customizationPolicy name="CustomizationPolicySchema1">
+          <settings>
+            <setting propertyId="DisplayName" />
+            <setting propertyId="Description" />
+            <setting propertyId="Settings" />
+          </settings>
+        </customizationPolicy>
+      </automationSettings>
+      <automationSettings Id="d92ef99d-29c5-4bb0-950d-a74a79bd23cc" name="OnAuthorChanged" displayName="On Author Changed" description="" codeIdentifier="OnAuthorChanged" automationType="Event Launch Point" classification="LaunchPoint">
+        <customizationPolicy name="CustomizationPolicySchema1">
+          <settings>
+            <setting propertyId="DisplayName" />
+            <setting propertyId="Description" />
+            <setting propertyId="Settings" />
+          </settings>
+        </customizationPolicy>
+      </automationSettings>
+      <automationSettings Id="5bbff2ef-0239-4e6b-a469-c3d35fc17134" name="SetRootNamespace" displayName="Set Root Namespace" description="" codeIdentifier="SetRootNamespace" automationType="Command">
+        <customizationPolicy name="CustomizationPolicySchema1">
+          <settings>
+            <setting propertyId="DisplayName" />
+            <setting propertyId="Description" />
+            <setting propertyId="Settings" />
+          </settings>
+        </customizationPolicy>
+      </automationSettings>
+      <automationSettings Id="304df426-edf2-4263-8086-d38e34b3f035" name="OnProductNameChanged" displayName="On Product Name Changed" description="" codeIdentifier="OnProductNameChanged" automationType="Event Launch Point" classification="LaunchPoint">
+        <customizationPolicy name="CustomizationPolicySchema1">
+          <settings>
+            <setting propertyId="DisplayName" />
+            <setting propertyId="Description" />
+            <setting propertyId="Settings" />
+          </settings>
+        </customizationPolicy>
+      </automationSettings>
+    </automationSettings>
+    <views>
+      <view Id="40430b9d-7034-4b4d-a2f7-ea6d5832f2cb" name="DefaultView" displayName="Default View" description="Description for VisualStudioExtension.DefaultView" codeIdentifier="DefaultView" isDefault="true" diagramId="23486b9b-8a8a-4434-8ba2-439fa872a0a2">
+        <customizationPolicy name="CustomizationPolicySchema1">
+          <settings>
+            <setting propertyId="DisplayName" />
+            <setting propertyId="Description" />
+            <setting propertyId="IsVisible" />
+            <setting propertyId="IsDefault" />
+          </settings>
+        </customizationPolicy>
+      </view>
+    </views>
+  </pattern>
+</patternModel>

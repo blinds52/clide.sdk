@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{833915FC-2263-429D-B009-73BBBF25815D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Clide.Sdk.Automation</RootNamespace>
+    <AssemblyName>Clide.Sdk.Automation</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <GeneratePkgDefFile>false</GeneratePkgDefFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NuPattern.Library">
+      <HintPath>$(PatternToolkitRuntime)\NuPattern.Library.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="NuPattern.Common">
+      <HintPath>$(PatternToolkitRuntime)\NuPattern.Common.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="NuPattern.Presentation">
+      <HintPath>$(PatternToolkitRuntime)\NuPattern.Presentation.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="NuPattern.Runtime.Extensibility">
+      <HintPath>$(PatternToolkitRuntime)\NuPattern.Runtime.Extensibility.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="NuPattern.VisualStudio">
+      <HintPath>$(PatternToolkitRuntime)\NuPattern.VisualStudio.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
+      <HintPath>$(PatternToolkitRuntime)\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Configuration.DesignTime">
+      <HintPath>$(PatternToolkitRuntime)\Microsoft.Practices.EnterpriseLibrary.Configuration.DesignTime.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Immutable.10.0" />
+    <Reference Include="Microsoft.VisualStudio.ExtensibilityHosting, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Modeling.Sdk.11.0" />
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\SetPropertyValue.cs" />
+    <Compile Include="GeneratedCode\Clide.Sdk\CollectionImplementation.gen.cs">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Toolkit/Product/D:\Code\clarius\github\clide.sdk\Toolkit\Toolkit.slnbldr%252f7af952bc-56d8-40a0-807c-1cb3abcab73e</SourceModelReference>
+      <ItemGuid>0a663719-82fe-433f-b128-7400d470b4e9</ItemGuid>
+    </Compile>
+    <Compile Include="GeneratedCode\Clide.Sdk\CollectionInterface.gen.cs">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Toolkit/Product/D:\Code\clarius\github\clide.sdk\Toolkit\Toolkit.slnbldr%252f7af952bc-56d8-40a0-807c-1cb3abcab73e</SourceModelReference>
+      <ItemGuid>18f394c5-3c7e-4166-aa83-c1e59e033111</ItemGuid>
+    </Compile>
+    <Compile Include="GeneratedCode\Clide.Sdk\ElementImplementation.gen.cs">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Toolkit/Product/D:\Code\clarius\github\clide.sdk\Toolkit\Toolkit.slnbldr%252f7af952bc-56d8-40a0-807c-1cb3abcab73e</SourceModelReference>
+      <ItemGuid>bc6fa431-51e9-4378-a36d-b249ebd64168</ItemGuid>
+    </Compile>
+    <Compile Include="GeneratedCode\Clide.Sdk\ElementInterface.gen.cs">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Toolkit/Product/D:\Code\clarius\github\clide.sdk\Toolkit\Toolkit.slnbldr%252f7af952bc-56d8-40a0-807c-1cb3abcab73e</SourceModelReference>
+      <ItemGuid>6aa4b749-d88c-4af8-b56b-ccbe44493318</ItemGuid>
+    </Compile>
+    <Compile Include="GeneratedCode\Clide.Sdk\ExtensionPointImplementation.gen.cs">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Toolkit/Product/D:\Code\clarius\github\clide.sdk\Toolkit\Toolkit.slnbldr%252f7af952bc-56d8-40a0-807c-1cb3abcab73e</SourceModelReference>
+      <ItemGuid>d1acd54f-d2cc-458e-a48e-f2074bfc2b42</ItemGuid>
+    </Compile>
+    <Compile Include="GeneratedCode\Clide.Sdk\ExtensionPointInterface.gen.cs">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Toolkit/Product/D:\Code\clarius\github\clide.sdk\Toolkit\Toolkit.slnbldr%252f7af952bc-56d8-40a0-807c-1cb3abcab73e</SourceModelReference>
+      <ItemGuid>6fb31843-b423-4ccb-844c-7699f0e0a9de</ItemGuid>
+    </Compile>
+    <Compile Include="GeneratedCode\Clide.Sdk\ProductImplementation.gen.cs">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Toolkit/Product/D:\Code\clarius\github\clide.sdk\Toolkit\Toolkit.slnbldr%252f7af952bc-56d8-40a0-807c-1cb3abcab73e</SourceModelReference>
+      <ItemGuid>6f8816e5-59b9-4043-b1fa-08ad1ba9bb48</ItemGuid>
+    </Compile>
+    <Compile Include="GeneratedCode\Clide.Sdk\ProductInterface.gen.cs">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Toolkit/Product/D:\Code\clarius\github\clide.sdk\Toolkit\Toolkit.slnbldr%252f7af952bc-56d8-40a0-807c-1cb3abcab73e</SourceModelReference>
+      <ItemGuid>85336856-80c7-4522-a6b9-fd4ffae86bc8</ItemGuid>
+    </Compile>
+    <Compile Include="GeneratedCode\Clide.Sdk\ViewImplementation.gen.cs">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Toolkit/Product/D:\Code\clarius\github\clide.sdk\Toolkit\Toolkit.slnbldr%252f7af952bc-56d8-40a0-807c-1cb3abcab73e</SourceModelReference>
+      <ItemGuid>d6d3a928-f513-4815-bcba-553035f07e8a</ItemGuid>
+    </Compile>
+    <Compile Include="GeneratedCode\Clide.Sdk\ViewInterface.gen.cs">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Toolkit/Product/D:\Code\clarius\github\clide.sdk\Toolkit\Toolkit.slnbldr%252f7af952bc-56d8-40a0-807c-1cb3abcab73e</SourceModelReference>
+      <ItemGuid>638ea1d6-d0c6-4b10-8e9b-800fe85eb485</ItemGuid>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TypeConverters\LocaleIds.cs">
+      <ItemGuid>feff3d75-707e-4a5a-ab3a-083563ac75fe</ItemGuid>
+    </Compile>
+    <Compile Include="ValueProviders\CodeIdentifier.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4df5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Conditions\" />
+    <Folder Include="Events\" />
+    <Folder Include="TypeEditors\" />
+    <Folder Include="ValidationRules\" />
+    <Folder Include="ValueComparers\" />
+  </ItemGroup>
+  <!-- Properties for Toolkit Targets -->
+  <PropertyGroup>
+    <CopyVsixDebuggingDependencies>false</CopyVsixDebuggingDependencies>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(localappdata)\Microsoft\MSBuild\NuPattern\NuPattern Toolkit Builder\NuPattern.Authoring.PatternToolkitVersion.targets" />
+  <!-- Properties for VSSDK/DSL Targets -->
+  <PropertyGroup>
+    <StartProgram>$(DevEnvDir)\devenv.exe</StartProgram>
+    <StartAction>Program</StartAction>
+    <StartArguments>/rootsuffix Exp</StartArguments>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+             Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+</Project>
